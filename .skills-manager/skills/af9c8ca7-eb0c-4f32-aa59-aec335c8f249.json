@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "af9c8ca7-eb0c-4f32-aa59-aec335c8f249",
+  "path": "commit-msg",
+  "path_key": "commit-msg",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

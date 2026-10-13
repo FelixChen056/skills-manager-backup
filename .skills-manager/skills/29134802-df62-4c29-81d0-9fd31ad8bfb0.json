@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "29134802-df62-4c29-81d0-9fd31ad8bfb0",
+  "path": "human-readable-tech",
+  "path_key": "human-readable-tech",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

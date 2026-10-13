@@ -1,0 +1,155 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="false" level="WEAK WARNING" enabled_by_default="false">
+      <Languages>
+        <language minSize="62" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="OutdatedRequirementInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="3.13" />
+            <item index="1" class="java.lang.String" itemvalue="3.11" />
+            <item index="2" class="java.lang.String" itemvalue="3.10" />
+            <item index="3" class="java.lang.String" itemvalue="3.12" />
+            <item index="4" class="java.lang.String" itemvalue="3.14" />
+            <item index="5" class="java.lang.String" itemvalue="3.15" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyInconsistentReturnsInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="cryptography" />
+          <option value="matplotlib" />
+          <option value="packaging" />
+          <option value="pycparser" />
+          <option value="pyparsing" />
+          <option value="rqdatac" />
+          <option value="rqdatac-fund" />
+          <option value="wcwidth" />
+          <option value="pydantic" />
+          <option value="pydantic-core" />
+          <option value="rqsdk" />
+          <option value="ca-certificates" />
+          <option value="expat" />
+          <option value="libffi" />
+          <option value="libzlib" />
+          <option value="openssl" />
+          <option value="pip" />
+          <option value="setuptools" />
+          <option value="sqlite" />
+          <option value="tzdata" />
+          <option value="wheel" />
+          <option value="xz" />
+          <option value="zlib" />
+          <option value="backtrader" />
+          <option value="brotli" />
+          <option value="cffi" />
+          <option value="contourpy" />
+          <option value="fonttools" />
+          <option value="kiwisolver" />
+          <option value="msgpack" />
+          <option value="numpy" />
+          <option value="orjson" />
+          <option value="patsy" />
+          <option value="pillow" />
+          <option value="pyopenssl" />
+          <option value="python-rapidjson" />
+          <option value="scipy" />
+          <option value="statsmodels" />
+          <option value="tabulate" />
+          <option value="tqdm" />
+          <option value="typing-extensions" />
+          <option value="bzip2" />
+          <option value="tk" />
+          <option value="ucrt" />
+          <option value="vc" />
+          <option value="vc14_runtime" />
+          <option value="vs2015_runtime" />
+          <option value="cycler" />
+          <option value="pyjwt" />
+          <option value="win-inet-pton" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+          <option value="E722" />
+          <option value="W605" />
+          <option value="E701" />
+          <option value="E702" />
+          <option value="E231" />
+          <option value="E101" />
+          <option value="W191" />
+          <option value="E402" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+          <option value="N806" />
+          <option value="N802" />
+          <option value="N803" />
+          <option value="N813" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStringConversionWithoutDunderMethodInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredTypes">
+        <list>
+          <option value="types.NoneType" />
+          <option value="_io.TextIOWrapper" />
+          <option value="str" />
+          <option value="int" />
+          <option value="float" />
+          <option value="complex" />
+          <option value="set" />
+          <option value="frozenset" />
+          <option value="bytes" />
+          <option value="bytearray" />
+          <option value="memoryview" />
+          <option value="slice" />
+          <option value="list" />
+          <option value="dict" />
+          <option value="bool" />
+          <option value="range" />
+          <option value="tuple" />
+          <option value="pathlib.PurePath" />
+          <option value="_typeshed.NoneType" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStubPackagesAdvertiser" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="pandas-stubs==3.0.0.260204" />
+          <option value="pandas" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="list.*" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="ReassignedToPlainText" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="ShellCheck" enabled="true" level="ERROR" enabled_by_default="true">
+      <shellcheck_settings value="SC2164" />
+    </inspection_tool>
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlResolveInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+  </profile>
+</component>

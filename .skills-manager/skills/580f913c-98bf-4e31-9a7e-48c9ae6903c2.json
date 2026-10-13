@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "580f913c-98bf-4e31-9a7e-48c9ae6903c2",
+  "path": "baseline-ui",
+  "path_key": "baseline-ui",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
