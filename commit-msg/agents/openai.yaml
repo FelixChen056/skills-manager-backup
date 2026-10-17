@@ -1,6 +1,0 @@
-interface:
-  display_name: "Commit Msg"
-  short_description: "Draft per-file commits; commit only after confirmation"
-  default_prompt: "Use $commit-msg to draft per-file commit messages and commit them only after my explicit confirmation."
-policy:
-  allow_implicit_invocation: false
