@@ -42,6 +42,10 @@ echo.
 echo 提交成功：%BACKUP_MSG%
 
 echo ======================
+echo 开始推送代码
+git push
+
+echo ======================
 echo 自动提交执行结束
 :done
 echo.
