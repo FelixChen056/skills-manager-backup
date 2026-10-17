@@ -4,11 +4,17 @@ chcp 65001 >nul
 
 cd /d "%~dp0" || goto :failed
 
-set "BACKUP_DATE="
-for /f %%D in ('powershell.exe -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "BACKUP_DATE=%%D"
-if not defined BACKUP_DATE goto :failed
-
 git rev-parse --is-inside-work-tree >nul
+if errorlevel 1 goto :failed
+
+set "BACKUP_MSG="
+for /f %%D in ('powershell.exe -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set "BACKUP_MSG=skill-backup-%%D"
+if not defined BACKUP_MSG goto :failed
+
+git pull
+if errorlevel 1 goto :failed
+
+git status
 if errorlevel 1 goto :failed
 
 git add --all -- .
@@ -21,10 +27,10 @@ if not errorlevel 1 (
     goto :done
 )
 
-git commit -m "skill-backup-%BACKUP_DATE%"
+git commit -m "%BACKUP_MSG%"
 if errorlevel 1 goto :failed
 echo.
-echo 提交成功：skill-backup-%BACKUP_DATE%
+echo 提交成功：%BACKUP_MSG%
 
 :done
 echo.
