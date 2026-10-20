@@ -7,6 +7,8 @@ disable-model-invocation: true
 
 Write a handoff document summarising the current conversation so a fresh agent can continue the work.
 
+Write all explanatory text in `docs/HANDOFF.md` in English only, including headings, goals, progress, constraints, verification results, suggested skills descriptions, and the final next step.
+
 Include a "suggested skills" section in the document, naming which skills the next agent should call the Skill tool for.
 
 Do not duplicate content already captured in other artifacts (specs, plans, ADRs, issues, commits, diffs). Reference them by path or URL instead.
@@ -36,7 +38,7 @@ If the user passed arguments, treat them as a description of what the next sessi
    As needed, record the working directory, branch, uncommitted changes, relevant files, and tasks that are still running. Record only known state and remind the next session to recheck information that may have changed. Reference key files, tests, plans, and other project materials by path or link instead of copying large passages of existing content. Follow the existing redaction requirements; do not include keys, passwords, or other sensitive information.
 
 7. **Make continuation straightforward**
-   After confirming that the handoff document was saved successfully, return its full path to the user along with one instruction that can be copied directly into a new session. Explicitly tell the new session to read the document first.
+   After confirming that the handoff document was saved successfully, return its full path to the user along with one instruction, written in Chinese, that can be copied directly into a new session. Explicitly tell the new session to read the document first. Keep this Chinese instruction in the user-facing response, outside the handoff document.
 
 8. **Use a fixed save location and update the same file**
    Save the handoff document to `docs/HANDOFF.md` under the working directory established for the current task. Temporary directory changes while running commands must not change this path base. Create `docs` if it does not exist. If the file already exists, read it first, preserve information that remains valid and relevant to subsequent work, and then fully rewrite the same file using the current conversation and workspace state. Do not append historical entries to the end or create handoff copies under other names.
