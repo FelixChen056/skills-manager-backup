@@ -4,7 +4,7 @@
 整个目录本身是一个 git 仓库（远程：`FelixChen056/skills-manager-backup`），可运行同目录下的 `skill-backup.cmd`
 执行「pull → status → add → commit → push」的定期备份。
 
-共收录 **26 个 skill** + 1 个备份脚本。按来源平台分为四类：OpenAI Codex 官方、Anthropic 官方、
+共收录 **23 个 skill** + 1 个备份脚本。按来源平台分为四类：OpenAI Codex 官方、Anthropic 官方、
 社区（skills.sh / npx skills 生态）、用户自建。所有出处均于 2026-11-04 逐一经 GitHub 检索核实。
 
 ## 平台归属速查表
@@ -18,13 +18,11 @@
 | review-agent | 只读「缺陷优先」代码审查 | **OpenAI Codex 内置**（Codex `.system` skill） | ✅ 纯指令，通用 |
 | frontend-design | 高辨识度生产级前端设计 | **Anthropic 官方**（anthropics/skills） | ✅ 纯指令，通用 |
 | find-skills | 发现 / 安装新 skill（`npx skills`） | skills.sh 生态官方配套 | ✅ 跨 agent |
-| huashu-design | HTML 高保真原型 / 幻灯片 / 动画 | 社区 `alchaincyf/huashu-design`（MIT） | ✅ 跨 agent |
 | design-taste-frontend | tasteskill v2 反 AI-slop 艺术指导 | 社区 `Leonxlnx/taste-skill`（MIT） | ✅ 跨 agent |
 | impeccable | 前端设计 / 审查 / 打磨全流程 | 社区 `pbakaus/impeccable` | ✅ 跨 agent（Codex `$` 命令风格） |
 | baseline-ui | Tailwind UI 基线规范检查 | 社区（skills.sh，sickn33） | ✅ 通用 |
 | gpt-taste | Awwwards 级前端（AIDA + GSAP） | 社区 `sickn33/agentic-awesome-skills` | ✅ 通用（为 GPT/Codex 改写，仅手动调用） |
 | eli5 | 按受众水平解释任意概念 | 社区（广泛流传） | ✅ 通用 |
-| redesign-existing-projects | 存量项目设计升级审计 | 社区（广泛流传） | ✅ 通用 |
 | codeagent | codeagent-wrapper 多后端调度 | 社区（codeagent-wrapper 配套） | ✅ 通用（需安装该 CLI） |
 | handoff | 会话压缩成交接文档 | 社区原版 + 用户自定义规则 | ✅ 通用 |
 | antidebug-breaker-skills | 反调试绕过 / JS 加密逆向 / 隐藏路由 | 用户自建 | ✅ 通用（依赖 AntiDebug Breaker MCP） |
@@ -32,7 +30,6 @@
 | rqdata-cli | 米筐 RQData 中国金融数据查询 | 用户自建 | ✅ 通用（需 rqdata CLI） |
 | tqsdk-trading-and-data | TqSdk 期货行情 / 交易 / 回测 | 用户自建 | ✅ 通用（需 TqSdk） |
 | human-readable-tech | 面向用户的中文可读技术表达 | 用户自建 | ✅ 通用 |
-| xmz-commit-skill | xmz Git 提交工作流（逐文件 commit） | 用户自建（xmz 个人规范） | ✅ 通用 |
 | xmz-style-check | Python 代码风格规范与检查 | 用户自建（xmz 个人规范） | ✅ 通用 |
 | xmz-task-gate | 代码变更前置任务审批闸门 | 用户自建（xmz 个人规范） | ⚠️ 依赖 Claude Code 工具 |
 | skill-backup.cmd | 目录 git 备份脚本（非 skill） | 用户自建运维脚本 | — |
@@ -80,7 +77,7 @@ Codex CLI 的官方技能库分 `.system`（系统内置，随 CLI 分发）与 
 - **平台**：Anthropic 官方技能库（Claude Code / Claude 生态），正文以 Claude 为第一人称；
   但内容是纯设计指令，无平台私有依赖，其他 Agent 亦可使用。
 
-## 三、社区技能（skills.sh / `npx skills` 生态及 GitHub 社区，10 个）
+## 三、社区技能（skills.sh / `npx skills` 生态及 GitHub 社区，7 个）
 
 skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），技能安装在 `.agents/skills/`
 并链接到各 Agent。下列均经 GitHub 检索定位到原始仓库。
@@ -89,13 +86,6 @@ skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），
 - **能力**：引导用户发现并安装新 skill——先查 skills.sh 排行榜，再 `npx skills find <query>` 搜索，
   按安装量 / 来源信誉 / star 数甄别后推荐。
 - **来源**：skills.sh 生态官方配套 skill（随 `npx skills` CLI 分发，众多项目 `.agents/skills/` 中均有收录）。
-
-### huashu-design（花叔Design）
-- **能力**：用 HTML 产出可交付的设计——高保真交互原型、1920×1080 幻灯片、时间轴动画 Demo（可导出 MP4/GIF）、
-  信息图；按任务化身 UX 设计师 / 动画师 / 幻灯片设计师；含 40 种 HTML 原生风格库、三版设计方向顾问、
-  5 维设计评审；核心原则「事实验证先于假设」（涉产品事实必先 WebSearch）。
-- **来源**：社区 `alchaincyf/huashu-design`（MIT，2026-05 起），安装方式 `npx skills add alchaincyf/huashu-design`，
-  明确支持 Claude Code、Cursor、Codex、OpenClaw、Hermes。
 
 ### design-taste-frontend（tasteskill v2）
 - **能力**：基于 247 个获奖网站（One Page Love / Awwwards）研究的反 AI-slop 前端技能：
@@ -129,11 +119,6 @@ skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），
 - **来源**：社区广泛流传的 skill（GitHub 上大量 dotfiles / `.agents/skills/` 收录，如 DreambigOu/ELI5），
   未定位到唯一权威原始仓库。
 
-### redesign-existing-projects
-- **能力**：存量网站 / 应用设计升级——扫描现有代码栈 → 按审计清单（字体、配色、布局、间距、
-  组件模式）逐项诊断通用 AI 痕迹 → 在原栈上定向修复，不推倒重写。
-- **来源**：社区广泛流传（GitHub 846 处收录），未定位到唯一权威原始仓库。
-
 ### codeagent
 - **能力**：调用 `codeagent-wrapper` 执行多后端 AI 编码任务——Codex（默认，深度分析）/ Claude（文档、
   快速实现）/ Gemini（UI 原型）三后端切换，支持 `@file` 引用与并行任务。
@@ -145,7 +130,7 @@ skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），
 - **来源**：社区原版（Claude Code slash 风格 frontmatter：`argument-hint` / `disable-model-invocation`，
   dotfiles 中广泛收录）+ 本地追加 8 条「Additional Custom Rules」自定义规则。
 
-## 四、用户自建（8 个）
+## 四、用户自建（7 个）
 
 ### antidebug-breaker-skills
 - **能力**：三大方向——网站反调试识别 / 绕过与持久脚本交付；指定接口参数的 JS 加密逆向
@@ -177,12 +162,6 @@ skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），
   生造标签）必须重组为自然完整中文；术语首现即注、口径不臆断、事实 / 推断 / 未知三分。
   与全局 CLAUDE.md「用户可读技术沟通」条款联动。
 - **平台**：纯指令，任何 Agent 通用。
-
-### xmz-commit-skill
-- **能力**：xmz 的 Git 提交工作流——UTF-8 编码契约（防中文乱码进历史）→ git status 勾选排除 →
-  N 个 agent 并发生成摘要 → 批量审核 → 逐文件串行 commit（中文 + 类型前缀），
-  禁止 `add .` / `--amend` / 跳 hook。version 2.1.0。
-- **平台**：通用（多 agent 并发依赖宿主 Agent 的子代理能力）。
 
 ### xmz-style-check
 - **能力**：Python 代码风格规范定义 + 主动检查双角色——短守卫单行、Sphinx 风格 docstring、
