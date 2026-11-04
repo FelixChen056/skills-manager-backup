@@ -3,12 +3,14 @@
 ## Use This Reference For
 
 - Choosing the right account mode before writing code
-- Explaining the difference among `TqAccount`, `TqKq`, `TqKqStock`, `TqSim`, `TqSimStock`, and `TqMultiAccount`
+- Explaining the difference among `TqAccount`, `TqKq`, `TqKqStock`, `TqSim`, `TqSimStock`, enterprise OTG accounts, and `TqMultiAccount`
 - Answering "which account class should I use?"
 
 ## Quick Selection
 
 Use the smallest account type that satisfies the request.
+
+Preserve an explicit user choice. Service authentication (`TqAuth`) and a broker's funds account (`TqAccount`) are separate. A failed live login must remain a reported failure, not trigger fallback to simulation. Keep actual credentials in environment variables or the project's secure configuration; skill installation is not permission to place or cancel live orders.
 
 | Account type | Use when | Futures or stock | Needs `TqAuth` | Notes |
 | --- | --- | --- | --- | --- |
@@ -29,7 +31,6 @@ These are valid when the user explicitly asks about them or already uses them:
 - `TqJees`
 - `TqYida`
 - `TqZq`
-- `TqTradingUnit`
 
 Do not lead with these unless the user needs that exact connectivity.
 

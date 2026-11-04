@@ -2,6 +2,19 @@
 
 Use this file when you need a concrete repository example or doc page before writing or revising an answer.
 
+## When The Repository Is Not Available
+
+The ZIP contains this skill, not a full SDK checkout. Paths below are source pointers, not files guaranteed to exist in the user's project. Do not request a private repository or repeatedly search missing directories.
+
+- Inspect the installed package using `tqsdk.__file__`, relevant docstrings and `inspect.signature(...)` with the selected project interpreter.
+- For documentation use [TqSdk API reference](https://doc.shinnytech.com/tqsdk/latest/reference/index.html), [quickstart](https://doc.shinnytech.com/tqsdk/latest/quickstart.html), and [usage guide](https://doc.shinnytech.com/tqsdk/latest/usage/index.html).
+- Public source is at [shinnytech/tqsdk-python](https://github.com/shinnytech/tqsdk-python). Match the user's SDK version before relying on a new parameter or behavior. Internal design/test pointers may not exist in the public release; public APIs and installed source remain the authority for that environment.
+- Adapt historical example symbols and dates to the task; do not copy an expired contract into a current-market program.
+
+## If TqSdk Is Missing
+
+Read [environment-setup.md](environment-setup.md), then run the bundled `scripts/check_environment.py` from the user's project directory using its interpreter. Install a missing SDK according to project constraints and recheck before running code.
+
 ## If The User Asks About `wait_update`
 
 - `doc/usage/framework.rst`
@@ -50,6 +63,8 @@ Use this file when you need a concrete repository example or doc page before wri
   - `cancel()` and `is_finished()`
 - `doc/advanced/scheduler.rst`
   - `TargetPosScheduler`
+- `tqsdk/algorithm/twap.py`
+  - direct `Twap` behavior, including `support_open_min_volume`
 - `design/target_pos_task_support_open_min_limit.md`
   - design notes for contracts with minimum opening volume rules
 - `tqsdk/test/target_pos_task/test_open_min_volume.py`
@@ -80,7 +95,6 @@ Use this file when you need a concrete repository example or doc page before wri
   - `TqKq` and `TqKqStock`
 - `doc/reference/tqsdk.sim.rst`
   - `TqSim` and `TqSimStock`
-
 ## If The User Asks About Backtest
 
 - `tqsdk/demo/tutorial/backtest.py`

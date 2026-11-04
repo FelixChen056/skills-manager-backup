@@ -10,11 +10,13 @@
 
 ## Table Of Contents
 
+- Environment and import failures
 - No data, `NaN`, or empty fields
 - `insert_order()` or `cancel_order()` does nothing
 - `TargetPosTask` does not act
 - `TargetPosTask` and minimum open volume contracts
 - Multi-account errors
+- Multi-strategy setup errors
 - `offset` errors
 - Stock and futures mixed up
 - `wait_update()` blocks too long
@@ -23,6 +25,12 @@
 - "未初始化 TqApi"
 - Named exception classes
 - Error triage order
+
+## Environment And Import Failures
+
+Before changing account or strategy code for an import failure, read [environment-setup.md](environment-setup.md). Use the actual project interpreter to check TqSdk, install it only when absent, and recheck before continuing. An import failure caused by another dependency is not evidence that TqSdk is absent.
+
+Authentication failures occur after import: distinguish `TqAuth` service login from broker login. Do not print passwords, repeatedly retry rejected credentials, or silently switch a live account to simulation.
 
 ## No Data, `NaN`, Or Empty Fields
 
@@ -174,6 +182,8 @@ If the user reports one of these names directly, prefer explaining the meaning o
 ## Error Triage Order
 
 When debugging, check in this order:
+
+Start at the failure stage shown by the traceback. Resolve import/environment and authentication failures before examining an update loop; use the following checks for a program that has connected successfully.
 
 1. wrong account type
 2. missing `wait_update()`
