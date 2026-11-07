@@ -62,7 +62,6 @@
 本机已安装以下 CLI 工具，处理对应任务时优先使用：
 
 - **rqdata**：查询中国金融市场数据，包括行情、因子、财务、宏观和交易日历等。
-- **officecli**：创建、读取和修改 Word、Excel、PowerPoint 文档，无需安装 Microsoft Office。
 
 - 使用工具前，按需通过 `Get-Command`、`--version` 或 `--help` 核验可用性和版本；
 - 工具参数或属性不确定时，必须通过 `--schema`、`help` 等自省能力核验。

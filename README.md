@@ -4,8 +4,9 @@
 整个目录本身是一个 git 仓库（远程：`FelixChen056/skills-manager-backup`），可运行同目录下的 `skill-backup.cmd`
 执行「pull → status → add → commit → push」的定期备份。
 
-共收录 **23 个 skill** + 1 个备份脚本。按来源平台分为四类：OpenAI Codex 官方、Anthropic 官方、
-社区（skills.sh / npx skills 生态）、用户自建。所有出处均于 2026-11-04 逐一经 GitHub 检索核实。
+共收录 **22 个 skill** + 1 个备份脚本。按来源平台分为四类：OpenAI Codex 官方、Anthropic 官方、
+社区（skills.sh / npx skills 生态）、用户自建。除新收录条目单独标注「来源待核」外，出处均于
+2026-11-04 逐一经 GitHub 检索核实。
 
 ## 平台归属速查表
 
@@ -18,13 +19,14 @@
 | review-agent | 只读「缺陷优先」代码审查 | **OpenAI Codex 内置**（Codex `.system` skill） | ✅ 纯指令，通用 |
 | frontend-design | 高辨识度生产级前端设计 | **Anthropic 官方**（anthropics/skills） | ✅ 纯指令，通用 |
 | find-skills | 发现 / 安装新 skill（`npx skills`） | skills.sh 生态官方配套 | ✅ 跨 agent |
-| design-taste-frontend | tasteskill v2 反 AI-slop 艺术指导 | 社区 `Leonxlnx/taste-skill`（MIT） | ✅ 跨 agent |
+| taste-skill | tasteskill 2.5.0 反 AI-slop 专业公司站设计 | 社区 `Leonxlnx/taste-skill`（MIT） | ✅ 跨 agent |
 | impeccable | 前端设计 / 审查 / 打磨全流程 | 社区 `pbakaus/impeccable` | ✅ 跨 agent（Codex `$` 命令风格） |
 | baseline-ui | Tailwind UI 基线规范检查 | 社区（skills.sh，sickn33） | ✅ 通用 |
 | gpt-taste | Awwwards 级前端（AIDA + GSAP） | 社区 `sickn33/agentic-awesome-skills` | ✅ 通用（为 GPT/Codex 改写，仅手动调用） |
 | eli5 | 按受众水平解释任意概念 | 社区（广泛流传） | ✅ 通用 |
 | codeagent | codeagent-wrapper 多后端调度 | 社区（codeagent-wrapper 配套） | ✅ 通用（需安装该 CLI） |
 | handoff | 会话压缩成交接文档 | 社区原版 + 用户自定义规则 | ✅ 通用 |
+| technical-writing | 技术文档写作规范（结论先行 / 事实可溯源） | 社区收集（来源待核） | ✅ 通用 |
 | antidebug-breaker-skills | 反调试绕过 / JS 加密逆向 / 隐藏路由 | 用户自建 | ✅ 通用（依赖 AntiDebug Breaker MCP） |
 | jd-auto-review | 京东待评价商品自动评价流水线 | 用户自建 | ✅ 通用（依赖 AntiDebug Breaker MCP） |
 | rqdata-cli | 米筐 RQData 中国金融数据查询 | 用户自建 | ✅ 通用（需 rqdata CLI） |
@@ -77,7 +79,7 @@ Codex CLI 的官方技能库分 `.system`（系统内置，随 CLI 分发）与 
 - **平台**：Anthropic 官方技能库（Claude Code / Claude 生态），正文以 Claude 为第一人称；
   但内容是纯设计指令，无平台私有依赖，其他 Agent 亦可使用。
 
-## 三、社区技能（skills.sh / `npx skills` 生态及 GitHub 社区，7 个）
+## 三、社区技能（skills.sh / `npx skills` 生态及 GitHub 社区，9 个）
 
 skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），技能安装在 `.agents/skills/`
 并链接到各 Agent。下列均经 GitHub 检索定位到原始仓库。
@@ -87,12 +89,15 @@ skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），
   按安装量 / 来源信誉 / star 数甄别后推荐。
 - **来源**：skills.sh 生态官方配套 skill（随 `npx skills` CLI 分发，众多项目 `.agents/skills/` 中均有收录）。
 
-### design-taste-frontend（tasteskill v2）
-- **能力**：基于 247 个获奖网站（One Page Love / Awwwards）研究的反 AI-slop 前端技能：
-  `draw.mjs` 从风格库发 3 个设计方向供选择 → 生成字体 / 配色 / hero / 区块蓝图 →
-  `inspect.mjs` 真实浏览器三宽度检测宅规（无渐变、无紫罗兰、标题 ≤2 行等）→ 截图自评修复循环。
-  页面（营销页 / 落地页）与应用界面（dashboard / 后台）各有独立流程。需 Node 22+ 与 Chrome/Edge。
-- **来源**：社区 `Leonxlnx/taste-skill`（MIT），skills.sh / Codex 插件市场分发。
+### taste-skill（tasteskill 2.5.0）
+- **能力**：反 AI-slop 专业公司网站设计技能，标杆为 figma.com 与 x.ai：先按业务定分型
+  （place / product / service / software 四类 site-kind），再按分型执行——真实照片与真实产品 UI
+  优先（无照片用产品渲染图）、一屏一 section、左右内容边缘对齐、安静微交互；shader 特效与大场景
+  仅限 tech 类（软件 / 游戏 / 硬件）页面。九条 House rules（图配文零说明、禁紫罗兰、地址脱敏等）
+  + `deal.mjs` / `start.mjs` 随机发牌打破布局惯性 + `consistency.mjs` / `check.mjs` / `perf.mjs`
+  无头 Chrome 四宽度强制检查修复循环。需 Node 22+ 与 Chrome/Edge。
+- **来源**：社区 `Leonxlnx/taste-skill`（MIT）。本地目录与上游同名，frontmatter `name:` 仍为
+  `design-taste-frontend`（v2 时代的旧名），内容已升级至 2.5.0。
 
 ### impeccable
 - **能力**：前端设计全流程大技能——craft / shape / audit / polish 等子命令各有关卡文件；
@@ -129,6 +134,14 @@ skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），
   失败尝试、恰好一个下一步），供新会话接续；文末返回可直接复制的中文接续指令。
 - **来源**：社区原版（Claude Code slash 风格 frontmatter：`argument-hint` / `disable-model-invocation`，
   dotfiles 中广泛收录）+ 本地追加 8 条「Additional Custom Rules」自定义规则。
+
+### technical-writing
+- **能力**：技术文档写作 house style——结论先行、每个论断可溯源、一个事实只有一个归属地、
+  禁 em / en dash、禁文内 changelog 与「上次更新」字段；按文档类型（normative / descriptive /
+  historical / runbook / reference）区分编辑规则。附 `references/style.md`（措辞禁令）与
+  `references/truth.md`（事实分级与溯源规则）。正文提及 writing-design-docs、recording-decisions
+  等一系列同级文档型 skill，本地未收录。
+- **来源**：社区收集，尚未定位到原始仓库（来源待核）。
 
 ## 四、用户自建（7 个）
 
@@ -186,6 +199,7 @@ skills.sh 是开放的跨 Agent 技能市场（CLI：`npx skills find/add`），
   可在 Codex 中以 `$名称` 直达；无此文件的 skill 在 Codex 中仍可正常自动触发。
 - **`disable-model-invocation: true`**（gpt-taste、handoff）：Claude Code 的 frontmatter 字段，
   禁止模型自动调用，仅用户显式 `/名称` 触发。
+- **`agents-backup/`**：非 skill。全局指令文件的手工备份目录（`AGENTS.zh.md`、`CLAUDE-zh.md`）。
 - **skill-backup.cmd**：非 skill。cmd 批处理，依次 git pull / status / add / commit
   （`skill-backup-<时间戳>`）/ push 到 `FelixChen056/skills-manager-backup`，无变更时跳过提交。
 - **备份历史**：见同目录 `.git` 与 `C:\Users\admin\.cc-switch\skill-backups`。
